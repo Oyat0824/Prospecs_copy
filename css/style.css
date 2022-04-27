@@ -1,0 +1,143 @@
+/* 노멀라이징 */
+* {
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ul, ol, li {
+	list-style: none;
+}
+
+/* 라이브러리 */
+.eng-font {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+}
+
+body {
+    background-color: #000;
+}
+/*************** 스타일 ***************/
+/*** 헤더 시작 ***/
+.ps-top {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+
+    width: 100%;
+    background-color: transparent;
+    color: #222;
+    font-size: 20px;
+
+    transition: .3s;
+}
+
+.ps-top:hover {
+    background-color: #fff;
+}
+
+.ps-top > .top-wrap {
+    display: flex;
+    align-items: center;
+
+    width: 1640px;
+    margin: 0 auto;
+}
+
+/* 헤더 > 로고 */
+.ps-top > .top-wrap > .logo > a {
+    display: block;
+    width: 105px;
+    height: 40px;
+
+    background: url(../img/logo/logo_white.svg) no-repeat;
+    transition: .3s;
+}
+
+.ps-top:hover > .top-wrap > .logo > a {
+    background: url(../img/logo/logo.svg) no-repeat;
+}
+
+/* 헤더 > 메뉴 */
+.ps-top > .top-wrap > .menu {
+    display: flex;
+    flex: auto;
+    align-items: center;
+
+    margin-left: 70px;
+    height: 120px;
+}
+
+.ps-top > .top-wrap > .menu > .gnb {
+    padding: 0 30px;
+}
+
+.ps-top > .top-wrap > .menu > .gnb > a {
+    display: block;
+    padding: 30px 0;
+    color: #fff;
+
+    transition: .3s;
+}
+
+.ps-top:hover > .top-wrap > .menu > .gnb > a { 
+    color: #000;
+}
+
+.ps-top > .top-wrap > .menu > .gnb > a:hover {
+    color: #ff0052;
+}
+
+/* 헤더 > 아이콘 */
+.ps-top > .top-wrap > .icon {
+    display: flex;
+    align-items: center;
+}
+
+.ps-top > .top-wrap > .icon > button {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.ps-top > .top-wrap > .icon > button + button,
+.ps-top > .top-wrap > .icon > button + a {
+    margin-left: 30px;
+}
+
+.ps-top > .top-wrap > .icon > .icon-search {
+    background: url(../img/icon/icon_search_white.svg) no-repeat;
+}
+
+.ps-top:hover > .top-wrap > .icon > .icon-search {
+    background: url(../img/icon/icon_search.svg) no-repeat;
+}
+
+.ps-top > .top-wrap > .icon > .icon-cart {
+    background: url(../img/icon/icon_cart_white.svg) no-repeat;
+}
+
+.ps-top:hover > .top-wrap > .icon > .icon-cart {
+    background: url(../img/icon/icon_cart.svg) no-repeat;
+}
+
+.ps-top > .top-wrap > .icon > a {
+    color: #fff;
+    transition: .3s;
+}
+
+.ps-top:hover > .top-wrap > .icon > a {
+    color: #000;
+}

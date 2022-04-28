@@ -15,6 +15,11 @@ ul, ol, li {
 }
 
 /* 라이브러리 */
+.con {
+    width: 1640px;
+    margin: 0 auto;
+}
+
 .eng-font {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
@@ -45,9 +50,6 @@ body {
 .ps-top > .top-wrap {
     display: flex;
     align-items: center;
-
-    width: 1640px;
-    margin: 0 auto;
 }
 
 /* 헤더 > 로고 */
@@ -75,12 +77,12 @@ body {
 }
 
 .ps-top > .top-wrap > .menu > .gnb {
-    padding: 0 30px;
+    padding: 50px 30px 0;
 }
 
 .ps-top > .top-wrap > .menu > .gnb > a {
     display: block;
-    padding: 30px 0;
+    padding: 0 10px 40px;
     color: #fff;
 
     transition: .3s;
@@ -92,6 +94,68 @@ body {
 
 .ps-top > .top-wrap > .menu > .gnb > a:hover {
     color: #ff0052;
+}
+
+.ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 50px 0;
+    border-top: 8px solid #222;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap > .inner {
+    display: flex;
+}
+
+.ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap > .inner > .downMenu {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap > .inner > .downMenu > ul > li > a,
+.ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap > .inner > .downBanner > ul > li > a {
+    line-height: 40px;
+    border-bottom: 8px solid #fff;
+    font-size: 18px;
+    color: #000;
+    transition: .3s;
+}
+
+.ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap > .inner > .downMenu > ul > li > a:hover,
+.ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap > .inner > .downBanner > ul > li > a:hover {
+    color: #ff0052;
+    border-bottom-color: #ff0052;
+}
+
+.ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap > .inner > .downBanner {
+    margin-left: 130px;
+}
+
+.ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap > .inner > .downBanner > ul {
+    display: flex;
+    font-size: 18px;
+}
+
+.ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap > .inner > .downBanner > ul > li + li {
+    margin-left: 80px;
+}
+
+.ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap > .inner > .downBanner > a {
+    display: block;
+    margin-top: 8px;
+}
+
+.ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap > .inner > .downBanner > a > img {
+    vertical-align: top;
+    width: 516px;
+    height: 298px;
 }
 
 /* 헤더 > 아이콘 */

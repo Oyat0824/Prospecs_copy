@@ -32,13 +32,21 @@ ul, ol, li {
     z-index: 9999;
 
     width: 100%;
-    background-color: transparent;
+    background-color: #fff;
     font-size: 20px;
 
     transition: .3s;
 }
 
-.ps-top:hover {
+.ps-top.top {
+    background-color: transparent;
+}
+
+.ps-top.down {
+    transform: translateY(-120px);
+}
+
+.ps-top.top:hover {
     background-color: #fff;
 }
 
@@ -53,11 +61,15 @@ ul, ol, li {
     width: 105px;
     height: 40px;
 
-    background: url(../img/logo/logo_white.svg) no-repeat;
     transition: .3s;
 }
 
-.ps-top:hover > .top-wrap > .logo > a {
+.ps-top.top > .top-wrap > .logo > a {
+    background: url(../img/logo/logo_white.svg) no-repeat;
+}
+
+.ps-top > .top-wrap > .logo > a,
+.ps-top.top:hover > .top-wrap > .logo > a {
     background: url(../img/logo/logo.svg) no-repeat;
 }
 
@@ -78,12 +90,16 @@ ul, ol, li {
 .ps-top > .top-wrap > .menu > .gnb > a {
     display: block;
     padding: 0 10px 40px;
-    color: #fff;
+    color: #222;
 
     transition: .3s;
 }
 
-.ps-top:hover > .top-wrap > .menu > .gnb > a { 
+.ps-top.top > .top-wrap > .menu > .gnb > a {
+    color: #fff;
+}
+
+.ps-top.top:hover > .top-wrap > .menu > .gnb > a { 
     color: #222;
 }
 
@@ -217,25 +233,31 @@ ul, ol, li {
     margin-left: 30px;
 }
 
-.ps-top > .top-wrap > .icon > .icon-search {
+.ps-top.top > .top-wrap > .icon > .icon-search {
     background: url(../img/icon/icon_search_white.svg) no-repeat;
 }
 
+.ps-top > .top-wrap > .icon > .icon-search,
 .ps-top:hover > .top-wrap > .icon > .icon-search {
     background: url(../img/icon/icon_search.svg) no-repeat;
 }
 
-.ps-top > .top-wrap > .icon > .icon-cart {
+.ps-top.top > .top-wrap > .icon > .icon-cart {
     background: url(../img/icon/icon_cart_white.svg) no-repeat;
 }
 
+.ps-top > .top-wrap > .icon > .icon-cart,
 .ps-top:hover > .top-wrap > .icon > .icon-cart {
     background: url(../img/icon/icon_cart.svg) no-repeat;
 }
 
 .ps-top > .top-wrap > .icon > a {
-    color: #fff;
+    color: #222;
     transition: .3s;
+}
+
+.ps-top.top > .top-wrap > .icon > a {
+    color: #fff;
 }
 
 .ps-top:hover > .top-wrap > .icon > a {

@@ -1,5 +1,27 @@
 $(document).ready(function(){
 // 헤더 시작
+    // 스크롤 최상단 위치에 따른 클래스 부여
+    $(window).scroll(function(){
+        if($(window).scrollTop()) {
+            $(".ps-top").removeClass("top")
+        } else {
+            $(".ps-top").addClass("top")
+        }
+    })
+
+    // 스크롤 내림 올림에 따른 클래스 부여
+    $("html").on('mousewheel',function(e){ 
+        var wheel = e.originalEvent.wheelDelta; 
+
+        if(wheel > 0){ 
+            //스크롤 올릴때
+            $(".ps-top").removeClass("down")
+        } else { 
+            //스크롤  내릴때
+            $(".ps-top").addClass("down")
+        } 
+    })
+
     // 메뉴 슬라이드
     $(".ps-top > .top-wrap > .menu > .gnb").mouseover(function(){
         $(this).children(".downMenu-wrap").stop().slideDown(220)

@@ -11,6 +11,11 @@
     <!-- 제이쿼리 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <!-- 슬릭 슬라이더 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+
     <!-- MY CSS -->
     <link rel="stylesheet" href="./css/style.css">
 
@@ -32,7 +37,7 @@
                     <a href="javascript:void(0)">SHOP</a>
                     <div class="downMenu-wrap">
                         <div class="inner con">
-                            <ul class="downMenu con">
+                            <ul class="downMenu">
                                 <ul>
                                     <li><a href="javascript:void(0)">SHOES</a></li>
                                     <li><a href="javascript:void(0)">워킹화</a></li>
@@ -98,12 +103,56 @@
                 </div>
                 <div class="gnb">
                     <a href="javascript:void(0)">ARCHIVE</a>
+                    <div class="downMenu-wrap">
+                        <div class="inner con">
+                            <ul class="downMenu">
+                                <ul>
+                                    <li><a href="javascript:void(0)">LOOKBOOK</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:void(0)">NEWS</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:void(0)">ISSUE</a></li>
+                                </ul>
+                            </ul>
+                            <div class="downBanner">
+                                <a href="javascript:void(0)">
+                                    <img src="./img/banner/Archive_banner01.png" alt="">
+                                </a>
+                            </div>
+                            <div class="downBanner">
+                                <a href="javascript:void(0)">
+                                    <img src="./img/banner/Archive_banner02.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="gnb">
                     <a href="javascript:void(0)">SPONSORSHIP</a>
+                    <div class="downMenu-wrap">
+                        <div class="inner con">
+                            <ul class="sponBanner">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <img src="./img/banner/Spon_banner01.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="gnb">
                     <a href="javascript:void(0)">SMART FIT</a>
+                    <div class="downMenu-wrap bg">
+                        <div class="bg">
+                            <div class="inner con">
+                                <h3><span class="eng-font">SMART FIT</span></h3>
+                                <p>프로스펙스 스마트핏은 내 발에 완벽한 사이즈와 상품을 추천해 주고, 맞춤신발 제작까지 해 주는 SMART한 서비스입니다.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="icon eng-font">
@@ -114,5 +163,83 @@
         </div>
     </header>
     <!-- 헤더 끝 -->
+
+    <!-- 메인 비주얼 시작 -->
+    <section class="mainVisual">
+        <div class="visual-wrap">
+            <div class="slides">
+                <div class="slide-page eng-font">
+                    <div class="box" data-slide-type="video">
+                        <a href="javascript:void(0)">
+                            <div class="img-box">
+                                <video id="ps-video" autoplay="autoplay" muted="muted" loop="loop" preload="auto" style="width:100%; height: 100vh; object-fit: cover;" class="">
+                                    <source type="video/mp4" src="./img/main_banner/banner01.mp4">
+                                </video>
+                            </div>
+                            <div class="txt-box">
+                                <p>PRO-SPECS</p>
+                                <p>22SS BRAND STORY</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="box" data-slide-type="img">
+                        <a href="javascript:void(0)">
+                            <div class="img-box" style="background-image: url(./img/main_banner/banner02.png);"></div>
+                            <div class="txt-box">
+                                <p>프로스펙스닷컴</p>
+                                <p>리뉴얼 오픈 이벤트</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="box" data-slide-type="img">
+                        <a href="javascript:void(0)">
+                            <div class="img-box" style="background-image: url(./img/main_banner/banner03.png);"></div>
+                            <div class="txt-box">
+                                <p>PRO-SPECS</p>
+                                <p>SPONSORSHIP</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="box" data-slide-type="img">
+                        <a href="javascript:void(0)">
+                            <div class="img-box" style="background-image: url(./img/main_banner/banner04.png);"></div>
+                            <div class="txt-box">
+                                <p>22SS NEW COLLECTION</p>
+                                <p>PERFORMANCE</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="box" data-slide-type="img">
+                        <a href="javascript:void(0)">
+                            <div class="img-box" style="background-image: url(./img/main_banner/banner05.png);"></div>
+                            <div class="txt-box">
+                                <p>22SS NEW COLLECTION</p>
+                                <p>ORIGINAL</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="slide-num eng-font">
+                    <div class="page-num"></div>
+                    <div class="page-track">
+                        <div class="track"></div>
+                    </div>
+                    <div class="page-total"></div>
+                </div>
+                <div class="slide-btn">
+                    <div class="prev"></div>
+                    <div class="next"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 메인 비주얼 끝 -->
+
+    <!-- 메인 배너 시작 -->
+    <section class="mainBanner">
+        <div class="banner-wrap">
+            
+        </div>
+    </section>
 </body>
 </html>

@@ -1,5 +1,12 @@
 $(document).ready(function(){
 // 헤더 시작
+    // 초기 스크롤 위치에 따른 클래스 부여
+    if($(window).scrollTop() == 0) {
+        $(".ps-top").addClass("top")
+    } else {
+        $(".ps-top").removeClass("top")
+    }
+
     // 스크롤 최상단 위치에 따른 클래스 부여
     $(window).scroll(function(){
         if($(window).scrollTop()) {
@@ -137,4 +144,164 @@ $(document).ready(function(){
         $(".prdIntro > .intro-wrap > .slides > .slide-page").slick("slickGoTo", btn_idx)
     })
 // 상품 소개 끝
+
+// 상품 아이템 슬라이드 시작
+    // 초기화
+    $(".prdItem > .item-wrap > .item-list > div").eq(0).show()
+
+    // 슬라이드 설정
+        // each를 통해 해당 선택자를 가져온 후 해당하는 인덱스에 맞춰 슬라이드 부여
+    $(".item-list > div").each(function(){
+		var slider = new Swiper(".swiperNo"+$(this).index()+"> .swiper", {
+            slidesPerView: "auto",
+            slidesPerGroup: 4,
+            spaceBetween: 20,
+            freeMode: true,
+            observer: true,
+            observeParents: true,
+    
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                draggable: true,
+                snapOnRelease: false
+            },
+        })
+	})
+
+    // 탭 메뉴를 클릭하면
+    $(".prdItem > .item-wrap > .tab-menu > a").click(function(){
+        let menu_idx = $(this).index()
+
+        $(".prdItem > .item-wrap > .tab-menu > a").removeClass("on")
+        $(this).addClass("on")
+
+        $(".prdItem > .item-wrap > .item-list > div").removeClass("on").hide()
+        $(".prdItem > .item-wrap > .item-list > div").eq(menu_idx).show()
+        setTimeout(function () {
+            $(".prdItem > .item-wrap > .item-list > div").eq(menu_idx).addClass("on")
+          }, 100);
+    })
+// 상품 아이템 슬라이드 끝
+
+// 스크롤 매직
+    // 컨트롤러 생성
+    var controller = new ScrollMagic.Controller();
+
+    // 씬 1 생성
+	let scene01 = new ScrollMagic.Scene({
+		triggerElement: ".mainBanner", // 스타트 지점을 생성
+		offset: 0 , // 스타트 지점을 이동
+		triggerHook: 1 , // 트리거 위치 지정
+		duration: 0, // 애니메이션이 작동되는 길이 생성 안쓰면 애니메이션이 시간초대로 움직임
+	});
+
+	scene01.setClassToggle(".mainBanner > .banner-wrap > a", "as-hi"); // 클래스 추가하기
+	scene01.addTo(controller); // 컨트롤러 등록
+
+    // 씬 2 생성
+	let scene02 = new ScrollMagic.Scene({
+		triggerElement: ".prdItem", // 스타트 지점을 생성
+		offset: 150 , // 스타트 지점을 이동
+		triggerHook: 1 , // 트리거 위치 지정
+		duration: 0, // 애니메이션이 작동되는 길이 생성 안쓰면 애니메이션이 시간초대로 움직임
+	});
+
+	scene02.setClassToggle(".prdItem > .item-wrap > .item-list > .swiperNo0", "on"); // 클래스 추가하기
+	scene02.addTo(controller); // 컨트롤러 등록
+
+    // 씬 3 생성
+	let scene03 = new ScrollMagic.Scene({
+		triggerElement: ".prdBanner01", // 스타트 지점을 생성
+		offset: 930 , // 스타트 지점을 이동
+		triggerHook: 1 , // 트리거 위치 지정
+		duration: 0, // 애니메이션이 작동되는 길이 생성 안쓰면 애니메이션이 시간초대로 움직임
+	});
+
+	scene03.setClassToggle(".prdBanner01 > .desc > .prd-list > li > a", "as-hi"); // 클래스 추가하기
+	scene03.addTo(controller); // 컨트롤러 등록
+// 스크롤 매직 끝
+
+// 탑 버튼
+    // 위치에 따른 탑 버튼 숨김 또는 등장
+    $(window).scroll(function(){
+        const wH = $(window).height();
+
+        if($(window).scrollTop() - wH > 0) {
+            $(".top-btn").fadeIn()
+        } else {
+            $(".top-btn").fadeOut()
+        }
+    })
+
+    // 탑 버튼 클릭 시
+    $(".top-btn").click(function(){
+        $("html, body").animate({
+            scrollTop: 0
+        }, 500)
+
+        $(".ps-top").removeClass("down")
+        $(".ps-top").addClass("top")
+    })
+
+// 팝업창 관련
+    var my_pop_up_class_name = ".pop-up" ;  // 내가 만든 팝업의 이름 쓰기
+    var close_btn_class_name = ".close" ;  // 내가 만든 팝업 닫기버튼 이름 쓰기
+    var expire_day_setting_val = 1 ;   // 몇일에 없어져야 하는지 쓰기 ex 하루뒤 1 , 이틀뒤 2
+
+    function set_storege( key , val , set_expire_day ){   
+    var date = new Date;
+    var expire_day = date.getTime() + (set_expire_day * 24 * 60 * 60 * 1000);
+    var key_val = JSON.stringify( {"val" : val , "set_expire_day" :  expire_day ,}) 
+    var test = JSON.parse(key_val);
+    localStorage.setItem(key, key_val);
+    }
+
+    function check_storege(key){
+    var key_storage = localStorage.getItem(key);
+    var key_storage_json = JSON.parse(key_storage);
+    var storage_expire ;
+    var date = new Date;
+    var now_day = date.getTime();
+    
+    if(localStorage.getItem(key) !== null){
+        storage_expire = key_storage_json.set_expire_day;
+    }
+    
+    if(storage_expire < now_day){
+        localStorage.removeItem(key);
+    }
+    
+    if(localStorage.getItem(key) !== null){
+        storage_expire = key_storage_json.set_expire_day;
+        $(my_pop_up_class_name).hide();
+        // 내 팝업 클래스 안 보이게 하기
+    } else{
+        $(my_pop_up_class_name).show(); 
+        // 내 팝업 클래스 보이게 하기
+    }  
+    }
+
+    check_storege(my_pop_up_class_name);
+
+    // 닫기 버튼을 누르면...
+    $(my_pop_up_class_name).find(close_btn_class_name).click(function(){
+        $(my_pop_up_class_name).hide();
+
+        let $today__checked = $(my_pop_up_class_name).find("input[type='checkbox']").prop("checked");
+
+        if($today__checked){
+            set_storege(my_pop_up_class_name, my_pop_up_class_name, expire_day_setting_val);
+        }
+        
+    })
+
+// 로그인 버튼 클릭
+    $(".ps-top.top > .top-wrap > .icon > .login").click(function(){
+        $(".modal-wrap").addClass("on")
+    })
+
+    $(".modal-wrap > .modal > .close-btn").click(function(){
+        $(".modal-wrap").removeClass("on")
+    })
+    
 })

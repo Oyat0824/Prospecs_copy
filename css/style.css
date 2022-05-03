@@ -70,12 +70,12 @@ ul, ol, li {
 }
 
 .ps-top.top > .top-wrap > .logo > a {
-    background: url(../img/logo/logo_white.svg) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/logo/logo_white.svg) no-repeat;
 }
 
 .ps-top > .top-wrap > .logo > a,
 .ps-top.top:hover > .top-wrap > .logo > a {
-    background: url(../img/logo/logo.svg) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/logo/logo.svg) no-repeat;
 }
 
 /* 헤더 > 메뉴 */
@@ -196,7 +196,7 @@ ul, ol, li {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: url(../img/menu/smartfit_bg.png);
+    background-image: url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/menu/smartfit_bg.png);
 }
 
 .ps-top > .top-wrap > .menu > .gnb > .downMenu-wrap.bg > .bg > .inner {
@@ -239,21 +239,21 @@ ul, ol, li {
 }
 
 .ps-top.top > .top-wrap > .icon > .icon-search {
-    background: url(../img/icon/icon_search_white.svg) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/icon/icon_search_white.svg) no-repeat;
 }
 
 .ps-top > .top-wrap > .icon > .icon-search,
 .ps-top:hover > .top-wrap > .icon > .icon-search {
-    background: url(../img/icon/icon_search.svg) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/icon/icon_search.svg) no-repeat;
 }
 
 .ps-top.top > .top-wrap > .icon > .icon-cart {
-    background: url(../img/icon/icon_cart_white.svg) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/icon/icon_cart_white.svg) no-repeat;
 }
 
 .ps-top > .top-wrap > .icon > .icon-cart,
 .ps-top:hover > .top-wrap > .icon > .icon-cart {
-    background: url(../img/icon/icon_cart.svg) no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/icon/icon_cart.svg) no-repeat;
 }
 
 .ps-top > .top-wrap > .icon > a {
@@ -366,12 +366,12 @@ ul, ol, li {
 
 .mainVisual > .visual-wrap > .slides > .slide-btn > .prev {
     left: auto;
-    background: url(../img/main_visual/btn_arrow_prev.svg) center no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/main_visual/btn_arrow_prev.svg) center no-repeat;
 }
 
 .mainVisual > .visual-wrap > .slides > .slide-btn > .next {
     right: -4px;
-    background: url(../img/main_visual/btn_arrow_next.svg) center no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/main_visual/btn_arrow_next.svg) center no-repeat;
 }
 
 /*** 메인 비주얼 끝 ***/
@@ -429,6 +429,7 @@ ul, ol, li {
 
 .prdIntro > .intro-wrap {
     width: 100%;
+    min-width: 1640px;
     overflow: hidden;
 }
 
@@ -468,11 +469,11 @@ ul, ol, li {
 
 .prdIntro > .intro-wrap > .slides > .slide-page .box > a > .img-box > .slide-btn > .prev {
     margin-right: 10px;
-    background: #222 url(../img/product_intro/icon_arrow_L_white.svg) center no-repeat;
+    background: #222 url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/product_intro/icon_arrow_L_white.svg) center no-repeat;
 }
 
 .prdIntro > .intro-wrap > .slides > .slide-page .box > a > .img-box > .slide-btn > .next {
-    background: #222 url(../img/product_intro/icon_arrow_R_white.svg) center no-repeat;
+    background: #222 url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/product_intro/icon_arrow_R_white.svg) center no-repeat;
 }
 
 .prdIntro > .intro-wrap > .slides > .slide-page .box > a > .txt-box {
@@ -516,7 +517,8 @@ ul, ol, li {
 
     position: absolute;
     top: 95px;
-    right: 400px;
+    left: 50%;
+    margin-left: 800px;
 }
 
 .prdIntro > .intro-wrap > .slides > .slide-num > .btn {

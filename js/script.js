@@ -3,6 +3,7 @@ $(document).ready(function(){
     // 초기 스크롤 위치에 따른 클래스 부여
     if($(window).scrollTop() == 0) {
         $(".ps-top").addClass("top")
+        $(".ps-top").removeClass("down")
     } else {
         $(".ps-top").removeClass("top")
     }
@@ -13,6 +14,7 @@ $(document).ready(function(){
             $(".ps-top").removeClass("top")
         } else {
             $(".ps-top").addClass("top")
+            $(".ps-top").removeClass("down")
         }
     })
 

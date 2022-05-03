@@ -112,6 +112,7 @@ $(document).ready(function(){
     $(".prdIntro > .intro-wrap > .slides > .slide-page").slick({
 		autoplay: false,
 		arrows: false,
+        speed: 300,
 	})
 
     // 슬라이드 이전/다음 버튼
@@ -135,4 +136,5 @@ $(document).ready(function(){
 
         $(".prdIntro > .intro-wrap > .slides > .slide-page").slick("slickGoTo", btn_idx)
     })
+// 상품 소개 끝
 })

@@ -37,10 +37,10 @@ $(document).ready(function(){
         // 페이지 초기 트랙 설정
         // 첫화면 비디오 대기 시간 설정
 	$('.mainVisual > .visual-wrap > .slides > .slide-page').on('init', function(event, slick){
-        $(".page-num").text("01")
-		$(".page-total").text("0" + slick.slideCount)
+        $(".mainVisual > .visual-wrap > .slides > .slide-num > .page-num").text("01")
+		$(".mainVisual > .visual-wrap > .slides > .slide-num > .page-total").text("0" + slick.slideCount)
 
-        $(".page-track > .track").css({
+        $(".mainVisual > .visual-wrap > .slides > .slide-num > .page-track > .track").css({
             "width" : (100 / slick.slideCount) + "%"
         })
 
@@ -61,9 +61,9 @@ $(document).ready(function(){
         // 페이지 넘버 관련
         // 페이지 트랙 관련
 	$('.mainVisual > .visual-wrap > .slides > .slide-page').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        $(".page-num").text("0" + (nextSlide+1))
+        $(".mainVisual > .visual-wrap > .slides > .slide-num > .page-num").text("0" + (nextSlide+1))
 
-        $(".page-track > .track").css({
+        $(".mainVisual > .visual-wrap > .slides > .slide-num > .page-track > .track").css({
             "width" : (100 / slick.slideCount) * (nextSlide+1) + "%"
         })
 	})
@@ -102,6 +102,12 @@ $(document).ready(function(){
 // 메인 비주얼 끝
 
 // 상품 소개 시작
+    // 슬라이드 초기화
+        // 초기 페이지 버튼에 액티브 부여
+    $('.prdIntro > .intro-wrap > .slides > .slide-page').on('init', function(event, slick){
+        $(".prdIntro > .intro-wrap > .slides > .slide-num > .btn").eq(0).addClass("active")
+    })
+
     // 슬라이더 기능
     $(".prdIntro > .intro-wrap > .slides > .slide-page").slick({
 		autoplay: false,
@@ -115,4 +121,18 @@ $(document).ready(function(){
 	$(".prdIntro > .intro-wrap > .slides > .slide-page .box > a > .img-box > .slide-btn > .next").click(function(){
 		$(".prdIntro > .intro-wrap > .slides > .slide-page").slick("slickNext")
 	})
+
+    // 넘어가기 전
+        // 슬라이드 넘길 경우 클래스 부여 및 제거
+	$('.prdIntro > .intro-wrap > .slides > .slide-page').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $(".prdIntro > .intro-wrap > .slides > .slide-num > .btn").removeClass("active")
+        $(".prdIntro > .intro-wrap > .slides > .slide-num > .btn").eq(nextSlide).addClass("active")
+	})
+
+    // 페이지 넘버 클릭 시 이동
+    $(".prdIntro > .intro-wrap > .slides > .slide-num > .btn").click(function(){
+        let btn_idx = $(this).index()
+
+        $(".prdIntro > .intro-wrap > .slides > .slide-page").slick("slickGoTo", btn_idx)
+    })
 })

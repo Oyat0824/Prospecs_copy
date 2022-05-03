@@ -511,30 +511,48 @@ ul, ol, li {
 }
 
 .prdIntro > .intro-wrap > .slides > .slide-num {
+    display: flex;
+    flex-direction: column;
+
     position: absolute;
     top: 95px;
-    bottom: auto;
-    left: 50%;
-    margin-left: 800px;
+    right: 400px;
 }
 
 .prdIntro > .intro-wrap > .slides > .slide-num > .btn {
     position: relative;
-    display: inline-block;
     width: 32px;
     height: 32px;
     line-height: 32px;
     text-align: center;
     font-size: 14px;
+    color: #fff;
+    background-color: #222;
+    opacity: 1;
+    transform: scale(0.5);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-num > .btn:hover {
+    transform: scale(1);
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-num > .btn > p {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-num > .btn:hover > p {
+    visibility: visible;
     opacity: 1;
 }
 
+.prdIntro > .intro-wrap > .slides > .slide-num > .btn.active {
+    transform: scale(1);
+}
 
-
-
-
-.scroll {
-    width: 100%;
-    height: 5000px;
-    background-color: rgb(255, 226, 231);
+.prdIntro > .intro-wrap > .slides > .slide-num > .btn.active > p {
+    visibility: visible;
+    opacity: 1;
 }

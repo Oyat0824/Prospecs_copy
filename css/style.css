@@ -646,10 +646,6 @@ ul, ol, li {
     width: 100%;
 }
 
-.prdItem > .item-wrap > .item-list > div.on {
-    display: block;
-}
-
 .prdItem > .item-wrap > .item-list > div > .swiper {
     width: 100%;
     padding-left: 30px;
@@ -985,17 +981,17 @@ ul, ol, li {
 }
 
 .quickMenu > ul > li.lookbook {
-    background: url(../img/quick_menu/icon_quick_01.svg) center top no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/quick_menu/icon_quick_01.svg) center top no-repeat;
     background-position-y: 20px;
 }
 
 .quickMenu > ul > li.store {
-    background: url(../img/quick_menu/icon_quick_02.svg) center top no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/quick_menu/icon_quick_02.svg) center top no-repeat;
     background-position-y: 6px;
 }
 
 .quickMenu > ul > li.giftcard {
-    background: url(../img/quick_menu/icon_quick_03.svg) center top no-repeat;
+    background: url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/quick_menu/icon_quick_03.svg) center top no-repeat;
     background-position-y: 8px;
 }
 
@@ -1174,7 +1170,7 @@ footer > .footer-wrap > .ps-right > .cs > .cs-box > div > p + p {
     width: 50px;
     height: 50px;
     border: 3px solid #222;
-    background: #fff url(../img/icon/icon_top_arrow.svg) center no-repeat;
+    background: #fff url(https://cdn.jsdelivr.net/gh/oyat0824/Prospecs_copy/img/icon/icon_top_arrow.svg) center no-repeat;
     cursor: pointer;
 }
 

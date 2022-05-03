@@ -206,7 +206,7 @@ $(document).ready(function(){
 		duration: 0, // 애니메이션이 작동되는 길이 생성 안쓰면 애니메이션이 시간초대로 움직임
 	});
 
-	scene02.setClassToggle(".prdItem > .item-wrap > .item-list > .swiperNo0", "on"); // 클래스 추가하기
+	scene02.setClassToggle(".prdItem > .item-wrap > .item-list > div", "on"); // 클래스 추가하기
 	scene02.addTo(controller); // 컨트롤러 등록
 
     // 씬 3 생성

@@ -298,7 +298,7 @@ $(document).ready(function(){
     })
 
 // 로그인 버튼 클릭
-    $(".ps-top.top > .top-wrap > .icon > .login").click(function(){
+    $(".ps-top > .top-wrap > .icon > .login").click(function(){
         $(".modal-wrap").addClass("on")
     })
 

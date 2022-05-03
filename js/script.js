@@ -100,4 +100,19 @@ $(document).ready(function(){
         }
 	})
 // 메인 비주얼 끝
+
+// 상품 소개 시작
+    // 슬라이더 기능
+    $(".prdIntro > .intro-wrap > .slides > .slide-page").slick({
+		autoplay: false,
+		arrows: false,
+	})
+
+    // 슬라이드 이전/다음 버튼
+    $(".prdIntro > .intro-wrap > .slides > .slide-page .box > a > .img-box > .slide-btn > .prev").click(function(){
+		$(".prdIntro > .intro-wrap > .slides > .slide-page").slick("slickPrev")
+	})
+	$(".prdIntro > .intro-wrap > .slides > .slide-page .box > a > .img-box > .slide-btn > .next").click(function(){
+		$(".prdIntro > .intro-wrap > .slides > .slide-page").slick("slickNext")
+	})
 })

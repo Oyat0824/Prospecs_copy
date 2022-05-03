@@ -10,6 +10,11 @@ a {
 	text-decoration: none;
 }
 
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
 ul, ol, li {
 	list-style: none;
 }
@@ -268,7 +273,9 @@ ul, ol, li {
 
 /*** 메인 비주얼 시작 ***/
 .mainVisual {
-    margin-bottom: 120px;
+    width: 100%;
+    min-width: 1640px;
+    margin: 0 auto 120px;
 }
 
 .mainVisual > .visual-wrap {
@@ -311,28 +318,32 @@ ul, ol, li {
 .mainVisual > .visual-wrap > .slides > .slide-num {
     display: flex;
     align-items: center;
+    
     position: absolute;
     left: calc((100% - 1640px)/2);
     bottom: 126px;
-    color: #fff;
+
     width: 300px;
+    font-size: 14px;
+    color: #fff;
 }
 
-.mainVisual > .visual-wrap > .slides > .slide-num .page-num {
+.mainVisual > .visual-wrap > .slides > .slide-num > .page-num {
     margin-right: 10px;
 }
 
-.mainVisual > .visual-wrap > .slides > .slide-num .page-total {
+.mainVisual > .visual-wrap > .slides > .slide-num > .page-total {
+    opacity: .5;
     margin-left: 10px;
 }
 
-.mainVisual > .visual-wrap > .slides > .slide-num .page-track {
+.mainVisual > .visual-wrap > .slides > .slide-num > .page-track {
     width: 100%;
     height: 6px;
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-.mainVisual > .visual-wrap > .slides > .slide-num .page-track > .track {
+.mainVisual > .visual-wrap > .slides > .slide-num > .page-track > .track {
     width: 0%;
     height: 100%;
     background-color: #fff;
@@ -355,12 +366,12 @@ ul, ol, li {
 
 .mainVisual > .visual-wrap > .slides > .slide-btn > .prev {
     left: auto;
-    background: url(../img/main_banner/btn_arrow_prev.svg) center no-repeat;
+    background: url(../img/main_visual/btn_arrow_prev.svg) center no-repeat;
 }
 
 .mainVisual > .visual-wrap > .slides > .slide-btn > .next {
     right: -4px;
-    background: url(../img/main_banner/btn_arrow_next.svg) center no-repeat;
+    background: url(../img/main_visual/btn_arrow_next.svg) center no-repeat;
 }
 
 /*** 메인 비주얼 끝 ***/
@@ -372,8 +383,158 @@ ul, ol, li {
 
 .mainBanner > .banner-wrap {
     display: flex;
-
+    justify-content: space-between;
     width: 100%;
+    min-width: 1640px;
     max-width: 1920px;
     margin: 0 auto;
+}
+
+.mainBanner > .banner-wrap > a {
+    position: relative;
+    display: block;
+    color: #fff;
+    font-weight: bold;
+}
+
+.mainBanner > .banner-wrap > a + a {
+    margin-left: 20px;
+}
+
+.mainBanner > .banner-wrap > a > .txt-box {
+    position: absolute;
+    bottom: 80px;
+    left: 80px;
+}
+
+.mainBanner > .banner-wrap > a > .txt-box > h3 {
+    font-size: 48px;
+    line-height: 67px;
+}
+
+.mainBanner > .banner-wrap > a > .txt-box > p {
+    font-size: 22px;
+    line-height: 30px;
+    margin-top: 5px;
+}
+
+
+/*** 메인 배너 끝 ***/
+
+
+/*** 상품 소개 시작 ***/
+.prdIntro {
+    margin-bottom: 120px;
+}
+
+.prdIntro > .intro-wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+.prdIntro > .intro-wrap > .slides {
+    position: relative;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-page .box {
+    background-color: rgb(248, 248, 248);
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-page .box > a {
+    position: relative;
+    display: block;
+    width: 1640px;
+    height: 880px;
+    margin: 0 auto;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-page .box > a > .img-box {
+    width: 100%;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-page .box > a > .img-box > .slide-btn {
+    position: absolute;
+    top: 320px;
+    left: 0;
+    z-index: 9999;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-page .box > a > .img-box > .slide-btn > div {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-page .box > a > .img-box > .slide-btn > .prev {
+    margin-right: 10px;
+    background: #222 url(../img/product_intro/icon_arrow_L_white.svg) center no-repeat;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-page .box > a > .img-box > .slide-btn > .next {
+    background: #222 url(../img/product_intro/icon_arrow_R_white.svg) center no-repeat;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-page .box > a > .txt-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding-top: 100px;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-page .box > a > .txt-box > .head {
+    font-size: 78px;
+    line-height: 90px;
+    margin-bottom: 40px;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-page .box > a > .txt-box > .lore {
+    position: absolute;
+    bottom: 100px;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-page .box > a > .txt-box > .lore > p {
+    display: inline-block;
+    background-color: #222;
+    height: 70px;
+    line-height: 1.5;
+    padding: 10px 20px;
+    margin-top: 8px;
+
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-num {
+    position: absolute;
+    top: 95px;
+    bottom: auto;
+    left: 50%;
+    margin-left: 800px;
+}
+
+.prdIntro > .intro-wrap > .slides > .slide-num > .btn {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 14px;
+    opacity: 1;
+}
+
+
+
+
+
+.scroll {
+    width: 100%;
+    height: 5000px;
+    background-color: rgb(255, 226, 231);
 }

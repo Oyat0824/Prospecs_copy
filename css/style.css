@@ -810,6 +810,7 @@ ul, ol, li {
 
 /*** 상품 배너 01 시작 ***/
 .prdBanner01 {
+    min-width: 1640px;
     margin-bottom: 140px;
 }
 
@@ -893,6 +894,7 @@ ul, ol, li {
 
 /*** 상품 배너 02 시작 ***/
 .prdBanner02 {
+    min-width: 1640px;
     margin-bottom: 80px;
 }
 
@@ -964,6 +966,7 @@ ul, ol, li {
 
 /*** 퀵 메뉴 시작 ***/
 .quickMenu {
+    min-width: 1640px;
     margin-bottom: 80px;
 }
 
